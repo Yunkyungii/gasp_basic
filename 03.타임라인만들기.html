@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        .test {
+            padding: 200px;
+            background: #ddd;
+        }
+
+        .test .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="test">
+        <div class="box">box</div>
+    </section>
+
+    <button class="btn1">멈춰!</button>
+    <button class="btn2">재생!</button>
+    <button class="btn3">거꾸로!</button>
+
+    <script>
+        const M = gsap.timeline({ repeat: 2, repeatDelay: 1 });
+
+        M
+            .to('.box', {
+                x: 1000
+            })
+            .to('.box', {
+                y: 500
+            })
+            .to('.box', {
+                x: 0,
+            })
+            .to('.box', {
+                y: 0,
+            });
+
+        const BT1 = document.querySelector('.btn1');
+        const BT2 = document.querySelector('.btn2');
+        const BT3 = document.querySelector('.btn3');
+
+        BT1.addEventListener('click', function () {
+            M.pause();
+        });
+        BT2.addEventListener('click', function () {
+            M.play();
+        });
+        BT3.addEventListener('click', function () {
+            M.reverse();
+        });
+    </script>
+</body>
+
+
+
+</html>

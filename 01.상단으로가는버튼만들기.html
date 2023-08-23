@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <style>
+        body {
+            height: 300vh;
+        }
+
+        .to_top {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="to_top">위로가기</div>
+
+    <script>
+        //제이쿼리로 해보기
+        // $(function () {
+        //     $('.to_top').on('click', function () {
+
+        //         $('html, body').animate({ scrollTop: 0 }, 1000)
+        //     })
+        // })
+
+
+        //생자바스크립트로 해보기 $(function () = 'DOMContentLoaded' -> 불러온다
+        // window.addEventListener('DOMContentLoaded', function () {
+        //     const TOTOP = document.querySelector('.to_top');
+        //     TOTOP.addEventListener('click', function () {
+        //         window.scrollTo({ top: 0, behavior: "smooth" })
+        // 부드럽게 올라가지 않는다면 window에서 설정을 하나 해줘야함
+        //     })
+        // });
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const TOTOP = document.querySelector('.to_top');
+            TOTOP.addEventListener('click', function () {
+                gsap.to(window, { scrollTo: 0, duration: 0.4 })
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

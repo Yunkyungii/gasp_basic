@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        .test {
+            height: 100vh;
+            padding: 200px;
+            background: #ddd;
+        }
+
+        .bg2 {
+            background: #fff;
+        }
+
+        .test .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="test">
+
+    </section>
+    <section class="test bg2">
+        <div class="box">box</div>
+    </section>
+
+    <script>
+        gsap.to('.box', {
+            x: 1000,
+            scrollTrigger: {
+                trigger: '.bg2',
+                markers: true,
+                start: 'top top',
+                scrub: 0,
+                pin: true,
+            }
+        })
+    </script>
+</body>
+
+</html>

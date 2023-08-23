@@ -1,0 +1,97 @@
+.section {
+    height: 100vh;
+    background: url(../images/gg.png);
+}
+
+.section:nth-child(odd) {
+    background: #f9f9f9 url(../images/gg.png);
+}
+
+.inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+#intro {
+    display: flex;
+    align-items: center;
+}
+
+#intro h2 {
+    width: 300px;
+    margin: 0 auto 100px auto;
+}
+
+#intro h2 span {
+    display: inline-block;
+    width: 100px;
+    font-size: 100px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#intro h2 span:nth-child(odd) {
+    background: #333;
+    color: #fff;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+}
+
+#profile .txt {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+#profile .txt span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 50%;
+
+    transform-origin: center bottom;
+}
+
+#profile .case {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+#profile .case>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#profile .img_box {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 30px solid #fff;
+}
+
+.logo {
+    position: fixed;
+    top: 80px;
+    left: 80px;
+    z-index: 999;
+}
+
+.footer {
+    position: fixed;
+    bottom: 80px;
+    left: 80px;
+    z-index: 999;
+}
+
+.gnb {
+    position: fixed;
+    top: 50%;
+    right: 80px;
+    transform: translate(0, -50%);
+    z-index: 999;
+}
